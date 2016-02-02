@@ -16,38 +16,26 @@ WinJS.UI.processAll().done(function ()
 
 function login(eventInfo)
 {
-    var fileInputElement = document.getElementById("uploaded_file");
-    var formData = new FormData();
-    formData.append('uploaded_file', fileInputElement.files[0]);
-
-    file = fileInputElement.files[0];
-    var ttt = MSApp.createFileFromStorageFile(file);
-
-    WinJS.xhr({
+    var formparams = "name=yyyy&summary=ggggg&category_id=1&client=android&userid=10";
+    WinJS.xhr
+    ({
         type: "POST",
-        url: "http://fafanya.netau.net/ui/addbidquery.php",
-        data: ttt
-    }).done(function completed(result)
-    {
-        if (result.status === 200)
+        url: "http://fafanya.netau.net/ui/add_bid_query.php",
+        data: formparams,
+        headers: { "Content-type": "application/x-www-form-urlencoded" },
+    })
+    .then
+    (
+        function (success)
         {
-        }
-    });
-
-    /*WinJS.xhr(
-        {
-            url: "http://fafanya.netau.net/ui/enter_customer_action.php?login=1&password=1&client=android",
-            responseType: "application/json",
-        }
-    ).done(function completed(result) {
-        if (result.status === 200) {
-            var tt = $.parseJSON(result.response);
-            var t = tt.userid;
-            document.cookie = "userid=" + t;
             window.location = "../html/customer_page.html";
-        }
-    });*/
-
+        },
+            function (error)
+            {
+                var aaa = 1 + 1;
+                var bbb = aaa + 1;
+            }
+    );
 
     var a = 1 + 1;
     var b = a + 1;

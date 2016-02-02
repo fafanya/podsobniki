@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="../WinJS/css/ui-dark.css" rel="stylesheet" />
+    <script src="../WinJS/js/base.js"></script>
+    <script src="../WinJS/js/ui.js"></script>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/angular.min.js"></script>
+    <script src="../js/performer_page.js"></script>
+
+    <title>podsobniki.by</title>
+</head>
+<body>
+    <div class="container">
+        <div class="page-header" id="banner">
+            <div class="row">
+                <div class="navbar-right">
+                    <a class="btn btn-link" href='../index.php'>
+                        [ Выйти ]
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="col-lg-6 col-lg-offset-3 text-center">
+            <h1>СТРАНИЦА ИСПОЛНИТЕЛЯ</h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div class="collapse navbar-collapse" id="myNavbar">
+                            <ul class="nav navbar-nav">
+                                <li><a href="performer_all_bids_page.html">[ Все заявки ]</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="col-lg-9">
+                <div class="text-center">
+                    <p>Избранные заявки</p>
+                </div>
+                <div class="col-lg-12" ng-app="myApp" ng-controller="customersCtrl">
+                    <div class="well bs-component" ng-repeat="x in links">
+                        <form class="form-horizontal" action="performer_his_bids_action.php">
+                            <fieldset>
+                                <legend>{{ x.name }}</legend>
+                                <div class="form-group">
+                                    <label class="col-lg-2 control-label">Категория</label>
+                                    <div class="col-lg-10">
+                                        <div class="controls">
+                                            <p class="form-control-static">{{ x.category }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-lg-2 control-label">E-mail</label>
+                                    <div class="col-lg-10">
+                                        <div class="controls">
+                                            <p class="form-control-static">{{ x.email }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-lg-2 control-label">Описание</label>
+                                    <div class="col-lg-10">
+                                        <div class="controls">
+                                            <p class="form-control-static">{{ x.summary }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-lg-2 control-label">Файлы</label>
+                                    <div class="col-lg-10">
+                                        <div class="controls" ng-repeat="y in x.files">
+                                            <a href="uploader/uploads/{{ y.file }}" target="_blank">{{ y.file }}</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-lg-10 col-lg-offset-2">
+                                        <input type="hidden" name="id" value="{{ x.id }}">
+                                        <div class="pull-right">
+                                            <button name="delete" type="submit" class="btn btn-primary">Удалить</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

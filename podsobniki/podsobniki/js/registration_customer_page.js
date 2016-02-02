@@ -2,10 +2,11 @@
 {
     var l = document.getElementById("inputLogin").value;
     var p = document.getElementById("inputPassword").value;
+    var e = document.getElementById("inputEmail").value;
 
     WinJS.xhr(
         {
-            url: "http://fafanya.netau.net/ui/enter_customer_action.php?login=" + l + "&password=" + p + "&client=android",
+            url: "http://fafanya.netau.net/ui/dbquery/add_customer_query.php?login=" + l + "&password=" + p + "&email=" + e + "&client=android",
             responseType: "application/json",
         }
     )
@@ -15,16 +16,13 @@
         {
             if (result.status === 200)
             {
-                var useridJSON = $.parseJSON(result.response);
-                var userid = useridJSON.userid;
-                document.cookie = "userid=" + userid;
-                window.location = "../html/customer_page.html";
+                window.location = "../html/ok_signup_customer_page.html";
             }
         },
-        function error(req) 
+        function error(req)
         {
-            window.location = "../html/no_enter_customer_page.html";
-        } 
+            window.location = "../html/no_signup_customer_page.html";
+        }
     );
 }
 
