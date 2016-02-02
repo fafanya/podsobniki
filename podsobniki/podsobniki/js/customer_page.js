@@ -26,17 +26,6 @@ var tt = $.parseJSON(result.response);
             records = tt.records;
         }
     });
-
-    //app.controller('customersCtrl', function ($scope, $http)
-    //{
-    //    $scope.names = records;
-    //});
-
-//angular.module('myApp', [])
-//    .controller('customersCtrl', function($scope) {
-//         $scope.names = records;
-//    });
-
 });
 var app = angular.module('myApp', []);
 app.controller('customersCtrl', function ($scope, $http)
