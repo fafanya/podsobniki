@@ -31,13 +31,13 @@ app.controller('customersCtrl', function ($scope, $http)
 
     $scope.viewBid = function (id)
     {
-        document.cookie = "curbidid=" + userid;
+        document.cookie = "curbidid=" + id;
         window.location = "../html/view_bid_page.html";
     };
 
     $scope.editBid = function (id)
     {
-        document.cookie = "curbidid=" + userid;
+        document.cookie = "curbidid=" + id;
         window.location = "../html/edit_bid_page.html";
     };
 });
