@@ -110,6 +110,7 @@
     <Content Include="js\enter_performer_page.js" />
     <Content Include="js\jquery.min.js" />
     <Content Include="js\npm.js" />
+    <Content Include="js\performer_all_bids_page.js" />
     <Content Include="js\performer_page.js" />
     <Content Include="js\registration_customer_page.js" />
     <Content Include="js\registration_performer_page.js" />

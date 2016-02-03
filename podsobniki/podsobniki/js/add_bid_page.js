@@ -1,4 +1,15 @@
-﻿var app = angular.module('myApp', []);
+﻿function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') c = c.substring(1);
+        if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+    }
+    return "";
+}
+
+var app = angular.module('myApp', []);
 app.controller('customersCtrl', function($scope, $http) {
     $http.get("http://fafanya.netau.net/ui/dbquery/category_list_query.php")
     .success(function (response)
@@ -16,7 +27,12 @@ WinJS.UI.processAll().done(function ()
 
 function login(eventInfo)
 {
-    var formparams = "name=yyyy&summary=ggggg&category_id=1&client=android&userid=10";
+    var userid = getCookie("userid");
+    var name = document.getElementById("name").value;
+    var summary = document.getElementById("summary").value;
+    var category_id = document.getElementById("category_id").value;
+
+    var formparams = "name="+name+"&summary="+summary+"&category_id="+category_id+"&client=android&userid="+userid;
     WinJS.xhr
     ({
         type: "POST",
@@ -32,11 +48,6 @@ function login(eventInfo)
         },
             function (error)
             {
-                var aaa = 1 + 1;
-                var bbb = aaa + 1;
             }
     );
-
-    var a = 1 + 1;
-    var b = a + 1;
 }

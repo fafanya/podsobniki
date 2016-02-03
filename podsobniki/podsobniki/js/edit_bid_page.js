@@ -37,17 +37,6 @@ app.controller('customersCtrl', function ($scope, $http)
         {
             document.cookie = "curbidid=" + id;
             window.location = "../html/edit_bid_page.html";
-            /*var curbidid = getCookie("curbidid");
-            var t = 1 + 1;
-            $http.get("http://fafanya.netau.net/ui/dbquery/bid_details_by_customer_query.php?id=" + curbidid)
-            .success(function (response) {
-                $scope.name = response.name;
-                $scope.category = response.category;
-                $scope.id = response.id;
-                $scope.summary = response.summary;
-                $scope.categories = response.categories;
-                $scope.selectedcategory = response.selectedcategory;
-            });*/
         });
     };
 

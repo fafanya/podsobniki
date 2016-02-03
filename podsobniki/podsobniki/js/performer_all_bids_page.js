@@ -12,17 +12,17 @@
 var app = angular.module('myApp', []);
 app.controller('customersCtrl', function ($scope, $http)
 {
-    var userid = getCookie("userid");
-    $http.get("http://fafanya.netau.net/ui/dbquery/bid_link_list_by_performer_query.php?userid=" + userid + "&client=android")
-    .success(
-    function (response)
+    $http.get("http://fafanya.netau.net/ui/dbquery/all_bid_list_query.php")
+    .success(function (response)
     {
-        $scope.links = response.links;
+        $scope.names = response.records;
     });
 
-    $scope.deleteBid = function (id)
+
+    $scope.addBid = function (id)
     {
-        $http.get("http://fafanya.netau.net/ui/performer_his_bids_action.php?id=" + id + "&client=android&delete=0")
+        var userid = getCookie("userid");
+        $http.get("http://fafanya.netau.net/ui/performer_all_bids_action.php?id=" + id + "&client=android&add=0&userid="+userid)
         .success(function (response)
         {
             window.location = "../html/performer_page.html";

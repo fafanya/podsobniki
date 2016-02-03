@@ -88,7 +88,7 @@
                                     <label class="col-lg-2 control-label">Описание</label>
                                     <div class="col-lg-10">
                                         <div class="controls">
-                                            <textarea class="form-control" rows="5"
+                                            <textarea class="form-control" rows="1"
                                                       name="summary">
                                                 {{ summary }}
                                             </textarea>
@@ -99,8 +99,8 @@
                                     <div class="col-lg-10 col-lg-offset-2">
                                         <input type="hidden" name="id" value="{{ id }}">
                                         <div class="pull-right">
-                                            <button name="save" type="submit" class="btn btn-default">Сохранить</button>
-                                            <button name="cancel" type="submit" class="btn btn-primary">Отмена</button>
+                                            <button name="save" ng-click="saveBid(id)" class="btn btn-default">Сохранить</button>
+                                            <button name="cancel" ng-click="cancelBid(id)" class="btn btn-primary">Отмена</button>
                                         </div>
                                     </div>
                                 </div>
@@ -117,7 +117,7 @@
                                 <div class="form-group">
                                     <div class="col-lg-10">
                                         <div class="controls">
-                                            <textarea class="form-control" rows="5"
+                                            <textarea class="form-control" rows="1" id="comment"
                                                       name="summary"></textarea>
                                         </div>
                                     </div>
@@ -126,7 +126,7 @@
                                     <div class="col-lg-10 col-lg-offset-2">
                                         <input type="hidden" name="id" value="{{ id }}">
                                         <div class="pull-right">
-                                            <button name="save" type="submit" class="btn btn-default">Сохранить</button>
+                                            <button name="save" ng-click="addComment(id)" class="btn btn-default">Сохранить</button>
                                         </div>
                                     </div>
                                 </div>
