@@ -72,13 +72,14 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="html\add_bid_page.html" />
     <Content Include="html\edit_bid_page.html" />
+    <Content Include="html\enter_page.html" />
+    <Content Include="html\main_page.html" />
     <Content Include="html\view_bid_page.html" />
     <Content Include="html\bid_details_by_performer_page.html" />
     <Content Include="html\cant_add_bid_to_customer_page.html" />
     <Content Include="html\cant_add_bid_to_performer_page.html" />
     <Content Include="html\customer_page.html" />
     <Content Include="html\enter_customer_page.html" />
-    <Content Include="html\enter_page.html" />
     <Content Include="html\enter_performer_page.html" />
     <Content Include="html\no_enter_customer_page.html" />
     <Content Include="html\no_enter_performer_page.html" />
@@ -99,6 +100,7 @@
     <Content Include="images\StoreLogo.png" />
     <Content Include="images\Wide310x150Logo.scale-200.png" />
     <Content Include="js\add_bid_page.js" />
+    <Content Include="js\angular-route.js" />
     <Content Include="js\angular.min.js" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
